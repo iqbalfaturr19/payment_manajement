@@ -13,7 +13,11 @@
                             <h3 class="panel-title">🏆 Employees with the Highest Bonuses</h3>
                         </div>
                         <div class="panel-body">
-                            {{$highestEmployee->employee->name}}
+                            @if($highestEmployee)
+                                {{$highestEmployee->employee->name}}
+                            @else
+                                No data available
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -23,7 +27,11 @@
                             <h3 class="panel-title">🔻 Employees with the Lowest Bonuses</h3>
                         </div>
                         <div class="panel-body">
-                            {{$lowestEmployee->employee->name}}
+                            @if($lowestEmployee)
+                                {{$lowestEmployee->employee->name}}
+                            @else
+                                No data available
+                            @endif
                         </div>
                     </div>
                 </div>
