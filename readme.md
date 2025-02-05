@@ -7,45 +7,31 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## BonusHub
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+BonusHub adalah sebuah platform atau aplikasi yang dirancang untuk membantu perusahaan dalam mengelola dan mengatur sistem bonus bagi karyawan. Dengan BonusHub, pengelolaan bonus menjadi lebih efisien dan terorganisir, memungkinkan perusahaan untuk memberikan penghargaan kepada karyawan berdasarkan kinerja mereka.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Instalasi
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Setelah Anda berhasil mengkloning repositori proyek ini, langkah pertama yang perlu dilakukan adalah menjalankan seeder untuk pertama kalinya. Proses ini penting untuk menambahkan data awal ke dalam database, termasuk akun admin yang akan memiliki hak akses penuh terhadap aplikasi, serta data karyawan yang diperlukan untuk pengujian dan pengelolaan lebih lanjut.
 
-## Learning Laravel
+Seeder ini akan menjalankan dua tugas utama:
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Menambahkan Data User: Anda perlu menjalankan perintah berikut untuk menambahkan data pengguna awal, termasuk akun admin yang memiliki akses penuh terhadap aplikasi:
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+php artisan db:seed --class=UserSeeder
 
-## Laravel Sponsors
+Perintah ini akan menambahkan akun pengguna (termasuk admin) ke dalam tabel users di database.
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+Menambahkan Data Karyawan: Setelah menambahkan data pengguna, Anda perlu menjalankan perintah berikut untuk menambahkan data karyawan:
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+php artisan db:seed --class=EmployeeSeeder
 
-## Contributing
+Perintah ini akan menyisipkan data karyawan ke dalam tabel employees, yang diperlukan untuk pengelolaan dan pengujian lebih lanjut dalam aplikasi.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Setelah kedua perintah tersebut dijalankan, database Anda akan terisi dengan data pengguna dan karyawan yang relevan, memastikan aplikasi siap untuk digunakan dengan data yang valid dan sesuai kebutuhan.
 
-## Security Vulnerabilities
+## Catatan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+User yang mendaftar melalui formulir registrasi akan otomatis diberikan role regular, yang membatasi akses mereka ke fitur-fitur tertentu dalam aplikasi.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
